@@ -43,7 +43,7 @@ jobs:
         coverage report -m
     
     - name: 📊 Upload coverage report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: coverage-report-python-${{ matrix.python-version }}
         path: .coverage
@@ -75,7 +75,7 @@ jobs:
         pylint temperature.py --fail-under=8.0 --exit-zero
     
     - name: 📊 Upload lint report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: lint-report
         path: |
@@ -107,7 +107,7 @@ jobs:
         ls -la *.tar.gz
     
     - name: 📤 Upload build artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: temperature-converter-package
         path: temperature-converter-*.tar.gz
@@ -120,7 +120,7 @@ jobs:
     
     steps:
     - name: 📥 Download coverage reports
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         path: reports
     
@@ -147,7 +147,7 @@ jobs:
         cat report.md
     
     - name: 📤 Upload test report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: test-report
         path: report.md
@@ -161,7 +161,7 @@ jobs:
     
     steps:
     - name: 📥 Download package
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: temperature-converter-package
     
@@ -188,7 +188,7 @@ jobs:
         cat deployment.log
     
     - name: 📤 Upload deployment log
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: deployment-log
         path: deployment.log
