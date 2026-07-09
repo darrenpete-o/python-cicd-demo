@@ -11,6 +11,7 @@ from temperature import (
     is_freezing
 )
 
+
 class TestTemperatureConversions(unittest.TestCase):
     """Test temperature conversion functions"""
 
